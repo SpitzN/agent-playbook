@@ -28,7 +28,7 @@ Run `/superpowers:brainstorming` to shape the idea, then `/mattpocock-skills:gri
 
 ## 2. Decisions
 
-Each choice with a real alternative becomes an ADR in `docs/adr/NNNN-<slug>.md` as it is made, in the shape of `templates/docs/adr/0000-template.md`: the decision as a fact, considered options with the reason each lost, consequences. Typical first ones: where server state lives (or why there is none), the table, the form, the component library, the layout, supported screen sizes.
+Each choice with a real alternative becomes an ADR in `docs/adr/NNNN-<slug>.md` as it is made, through `/mattpocock-skills:domain-modeling`: the decision as a fact, considered options with the reason each lost, consequences. Typical first ones: where server state lives (or why there is none), the table, the form, the component library, the layout, supported screen sizes.
 
 **Done when** no open question in `docs/product.md` would change the code layout. The repository still holds only documents.
 
@@ -51,7 +51,7 @@ Write `docs/architecture.md`:
 
 ## 5. Guardrails
 
-Copy and adapt from `templates/`: `CLAUDE.md`, `.claude/rules/` (code-design, structure, react, ui), `docs/agents/`. Fill the CLAUDE.md placeholders and prune what this project does not use.
+Run `/mattpocock-skills:setup-matt-pocock-skills` with the local markdown tracker; it writes `docs/agents/`. Then copy and adapt from `templates/`: `CLAUDE.md` and `.claude/rules/` (code-design, structure, react, ui). Fill the CLAUDE.md placeholders and prune what this project does not use.
 
 A rule lint can check goes into lint (phase 7); `.claude/rules/` keeps only what lint cannot check. Each rule states the target behaviour.
 
@@ -59,7 +59,7 @@ A rule lint can check goes into lint (phase 7); `.claude/rules/` keeps only what
 
 ## 6. Spec and tickets
 
-Run `/mattpocock-skills:to-spec`, then `/mattpocock-skills:to-tickets`. Tickets land as `.scratch/<feature>/issues/NN-<slug>.md` (format: `templates/docs/agents/issue-tracker.md`). Each ticket is a thin end-to-end slice: what to build, the documents to read first, the seams to test at, `- [ ]` acceptance boxes, `**Blocked by:**` and `**Status:** ready-for-agent`. The last two tickets are a visual design pass and the README.
+Run `/mattpocock-skills:to-spec`, then `/mattpocock-skills:to-tickets`. Tickets land as `.scratch/<feature>/issues/NN-<slug>.md`. Add the loop's statuses to `docs/agents/issue-tracker.md` (see `/agent-playbook:ralph`, What the loop expects). Each ticket is a thin end-to-end slice: what to build, the documents to read first, the seams to test at, `- [ ]` acceptance boxes, `**Blocked by:**` and `**Status:** ready-for-agent`. The last two tickets are a visual design pass and the README.
 
 **Done when** the owner has read every ticket and each one is small enough for one session.
 

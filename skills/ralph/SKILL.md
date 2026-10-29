@@ -12,7 +12,7 @@ The loop is `ralph.sh` in this skill's directory, `${CLAUDE_SKILL_DIR}`; below, 
 
 What the loop expects of the project:
 
-- Tickets as local markdown under `.scratch/<feature>/issues/NN-<slug>.md`, each with `**Status:**` and `**Blocked by:**` lines (`docs/agents/issue-tracker.md`, written by `/agent-playbook:new-project`).
+- Tickets as local markdown under `.scratch/<feature>/issues/NN-<slug>.md` (the local tracker of `/mattpocock-skills:setup-matt-pocock-skills`), each with a `**Blocked by:** NN, NN` line and a `**Status:**` line. The owner sets `ready-for-agent`; the loop sets `in-progress` and `done`; a session that needs the owner sets `needs-info`. A ticket is picked when every ticket it lists is `done`.
 - A gate command, `pnpm check` unless `RALPH_CHECK` names another.
 - `.scratch/` git-ignored, a clean tree, `claude`, `jq`, `perl`, `git`, and for publishing `gh` and an `origin` remote.
 - Optionally its own session prompt at `.claude/ralph/prompt.md`, replacing `prompt.md` in this directory.

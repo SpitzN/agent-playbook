@@ -1,6 +1,6 @@
 {
   "name": "agent-playbook",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My way of building TypeScript and React projects with coding agents: documents first, guardrails in lint, tickets run by an unattended loop.",
   "author": {
     "name": "SpitzN",
