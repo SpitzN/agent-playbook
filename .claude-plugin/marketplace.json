@@ -1,0 +1,17 @@
+{
+  "name": "agent-playbook",
+  "owner": {
+    "name": "SpitzN",
+    "url": "https://github.com/SpitzN"
+  },
+  "description": "A personal playbook for building with coding agents, as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "agent-playbook",
+      "source": "./",
+      "description": "The new-project flow, the ralph ticket loop, project templates and a lessons log.",
+      "category": "workflow",
+      "keywords": ["workflow", "typescript", "react", "agents"]
+    }
+  ]
+}

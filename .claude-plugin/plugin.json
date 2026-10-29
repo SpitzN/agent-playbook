@@ -1,0 +1,13 @@
+{
+  "name": "agent-playbook",
+  "version": "0.1.0",
+  "description": "My way of building TypeScript and React projects with coding agents: documents first, guardrails in lint, tickets run by an unattended loop.",
+  "author": {
+    "name": "SpitzN",
+    "url": "https://github.com/SpitzN"
+  },
+  "homepage": "https://github.com/SpitzN/agent-playbook",
+  "repository": "https://github.com/SpitzN/agent-playbook",
+  "license": "MIT",
+  "keywords": ["workflow", "typescript", "react", "agents", "ralph"]
+}

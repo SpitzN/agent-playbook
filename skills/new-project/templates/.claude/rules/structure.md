@@ -1,0 +1,41 @@
+---
+paths:
+  - "src/**/*"
+---
+
+# Structure
+
+Lint enforces the layers and the folder names (`docs/tooling.md`, Import direction). These are the rules it cannot check. The layout is in `docs/architecture.md`, Code layout.
+
+## Where a new file goes
+
+1. A route page, or anything that connects two features: `src/app/routes/`. The router and providers: `src/app/app.tsx`. The shell: `src/app/shell/`, with the same vocabulary as a feature: `components/`, `hooks/`, `lib/`.
+2. Something only one feature uses: that feature, in the folder named by what the file is.
+   - `components/`: a `.tsx` component. A family of related components may share one subfolder, such as `components/graph/`; nothing nests deeper.
+   - `hooks/`: a hook, named `use-<what>.ts`.
+   - `stores/`: a Zustand store.
+   - `schemas/`: a Zod schema only this feature uses.
+   - `lib/`: a pure function.
+3. A fact more than one feature reads, such as a domain schema, seed data or a ranking rule: `src/domain/`, one file per concept, flat.
+4. Something with no domain meaning that a second caller already needs: `src/components/`, `src/hooks/` or `src/lib/`.
+
+A folder is created with its first file. No empty folders, no placeholder files, no `index.ts` barrels. A test sits beside the file it tests.
+
+## Crossing features
+
+A feature never imports another, not even a type. When a screen needs two features, its route reads from one and passes plain values and callbacks into the other.
+
+If the same fact is needed by both features, move it to `src/domain/` instead of passing it through every route.
+
+## A domain term both features show
+
+A component that shows a domain term in both features (a status badge, say) is split in two:
+
+- the mapping from the term to a look, as a pure function in `src/domain/` (status → badge tone, beside the status's ranking);
+- the look, as a variant of the primitive with no domain meaning (tone variants on `Badge`), picked by the mapping's result: `<Badge variant={statusTone(status)}>`.
+
+Each feature composes the two where it needs them. `src/components/` never imports `src/domain/`, and neither feature imports the other's badge.
+
+## Routes
+
+A file in `src/app/routes/` arranges feature components and connects them. It holds no business logic and no private sub-components; those belong in a feature. A route whose page would only render one feature component mounts that component directly in the router definition, with no page file.

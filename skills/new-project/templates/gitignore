@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+.scratch/
+.claude/worktrees/
+.DS_Store
+.impeccable/
