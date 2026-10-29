@@ -51,9 +51,9 @@ Write `docs/architecture.md`:
 
 ## 5. Guardrails
 
-Run `/mattpocock-skills:setup-matt-pocock-skills` with the local markdown tracker; it writes `docs/agents/`. Then copy and adapt from `templates/`: `CLAUDE.md` and `.claude/rules/` (code-design, structure, react, ui). Fill the CLAUDE.md placeholders and prune what this project does not use.
+Run `/mattpocock-skills:setup-matt-pocock-skills` with the local markdown tracker; it writes `docs/agents/`. Then copy and adapt from `templates/`: `CLAUDE.md` and `.claude/rules/` (code-design, structure, react, ui). Fill the CLAUDE.md placeholders and prune what this project does not use. Departures from `docs/conventions.md` at the playbook's root get an ADR.
 
-A rule lint can check goes into lint (phase 7); `.claude/rules/` keeps only what lint cannot check. Each rule states the target behaviour.
+A rule lint can check goes into lint (phase 7); `.claude/rules/` keeps only what lint cannot check. Each rule states the target behaviour. How to write them: `${CLAUDE_SKILL_DIR}/../../docs/writing-rules.md`.
 
 **Done when** `CLAUDE.md` points at every document from phases 1 to 4 with the condition for reading it.
 

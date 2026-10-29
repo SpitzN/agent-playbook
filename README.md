@@ -54,6 +54,9 @@ The full steps, with when each phase is done, are in [skills/new-project/SKILL.m
 
 | Path                                                             | What                                                              |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [docs/prompts.md](docs/prompts.md)                               | Ready prompts: orient, plan, slice, tests, debug, review, ADR, handoff, steering lines |
+| [docs/conventions.md](docs/conventions.md)                       | What every project follows: TypeScript, structure, state, React, UI, tests, git |
+| [docs/writing-rules.md](docs/writing-rules.md)                   | How to write rules for agents: where each lives, wording, keeping them true |
 | [LESSONS.md](LESSONS.md)                                         | Rules for working with agents, and why each holds                 |
 | [docs/stack.md](docs/stack.md)                                   | The default stack, its lint rules, and the traps found setting it up |
 | [skills/new-project/templates/](skills/new-project/templates/)   | Files a new project starts from: `CLAUDE.md`, rules, configs      |
